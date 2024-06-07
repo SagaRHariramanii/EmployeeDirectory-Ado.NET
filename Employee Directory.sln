@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeDirectory.Models", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeDirectory.UI", "EmployeeDirectory.UI\EmployeeDirectory.UI.csproj", "{43F926B2-5A8F-4225-842B-1A083ACB4561}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeDirectory.Controller", "EmployeeDirectory.Controller\EmployeeDirectory.Controller.csproj", "{4F2BEF83-0F5B-4ACD-BE2F-84C250790784}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{43F926B2-5A8F-4225-842B-1A083ACB4561}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43F926B2-5A8F-4225-842B-1A083ACB4561}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43F926B2-5A8F-4225-842B-1A083ACB4561}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F2BEF83-0F5B-4ACD-BE2F-84C250790784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F2BEF83-0F5B-4ACD-BE2F-84C250790784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F2BEF83-0F5B-4ACD-BE2F-84C250790784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F2BEF83-0F5B-4ACD-BE2F-84C250790784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

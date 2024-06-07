@@ -1,5 +1,4 @@
-﻿using EmployeeDirectory.Common;
-using EmployeeDirectory.Data;
+﻿using EmployeeDirectory.Data.Contract;
 using EmployeeDirectory.Models;
 using EmployeeDirectory.Services.Contract;
 
@@ -8,35 +7,35 @@ namespace EmployeeDirectory.Services
 
     public class EmployeeService : IEmployeeService
     {
+        private readonly IEmployeeHandler _employeeHandler;
+        public EmployeeService(IEmployeeHandler employeeHandler)
+        {
+            this._employeeHandler = employeeHandler;
+        }
+        
         public void AddEmployee(Employee emp)
         {
-            List<Employee> employeeDataList = JsonFileHandler.GetData<Employee>();
-            employeeDataList.Add(emp);
-            JsonFileHandler.AddDataToJson(employeeDataList);
+            _employeeHandler.AddData(emp);
         }
-        public void EditEmployee(string empId, Employee empData)
+        public void EditEmployee <T>(string empId, Enum fieldName ,T fieldInputData)
         {
-            List<Employee> employeeDataList = JsonFileHandler.GetData<Employee>();
-            //write string extension methods to compare by ignoring cases.
-            int index = employeeDataList.FindIndex(emp => emp.EmpId.Equals(empId));
-            employeeDataList[index] = empData;
-            JsonFileHandler.AddDataToJson(employeeDataList);
+            _employeeHandler.Update(empId, fieldName, fieldInputData);
         }
-
-        public void DeleteEmployee(string employeeId,Employee employeeData)
+        public void DeleteEmployee(string employeeId)
         {
-                employeeData.IsDeleted = true;
-                EditEmployee(employeeId, employeeData);
+            _employeeHandler.Delete(employeeId);
         }
         public Employee? GetEmployeeDataById(string empId)
         {
-            List<Employee> employeeDataList = JsonFileHandler.GetData<Employee>();
+            List<Employee> employeeDataList =_employeeHandler.GetData();
             Employee employeeData = (from emp in employeeDataList where emp.EmpId == empId select emp).FirstOrDefault()!;
             return employeeData;
         }
         public List<Employee> GetEmployeeDataList()
         {
-            return JsonFileHandler.GetData<Employee>();
+            List<Employee> employeeList = _employeeHandler.GetData();
+            return employeeList;
+
         }
     }
 }

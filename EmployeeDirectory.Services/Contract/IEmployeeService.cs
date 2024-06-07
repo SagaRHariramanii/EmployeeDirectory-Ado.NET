@@ -5,8 +5,8 @@ namespace EmployeeDirectory.Services.Contract
     public interface IEmployeeService
     {
         void AddEmployee(Employee employee);
-        void EditEmployee(string employeeId, Employee employee);
-        void DeleteEmployee(string employeeId, Employee employeeData);
+        void EditEmployee<T>(string empId, Enum fieldName, T fieldInputData);
+        void DeleteEmployee(string employeeId);
         Employee? GetEmployeeDataById(string employeeId);
         List<Employee> GetEmployeeDataList();
     }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmployeeDirectory.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1604c2c71d830abac046a3089e182f2214b4c824")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6325206afdc37138d033470e6319855a99f09d42")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmployeeDirectory.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmployeeDirectory.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

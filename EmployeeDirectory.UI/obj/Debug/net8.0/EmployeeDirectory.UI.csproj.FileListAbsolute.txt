@@ -46,3 +46,151 @@ C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.UI\obj\Debug\
 C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\ref\EmployeeDirectory.UI.dll
 C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Data\role.json
 C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Data\employee.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.exe
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.deps.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.runtimeconfig.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Models.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Services.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Services.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Data.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Models.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.csproj.AssemblyReference.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.AssemblyInfoInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.AssemblyInfo.cs
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.csproj.CoreCompileInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.sourcelink.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\Employee.9321E24D.Up2Date
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\refint\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.genruntimeconfig.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\obj\Debug\net8.0\ref\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\appsettings.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Data\employee.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Data\role.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.exe
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\appsettings.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.deps.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.runtimeconfig.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.UI.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Models.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Services.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Models.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Services.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Data.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.csproj.AssemblyReference.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.AssemblyInfoInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.AssemblyInfo.cs
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.csproj.CoreCompileInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.sourcelink.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\Employee.9321E24D.Up2Date
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\refint\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\EmployeeDirectory.UI.genruntimeconfig.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.UI\obj\Debug\net8.0\ref\EmployeeDirectory.UI.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Controller.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.UI\bin\Debug\net8.0\EmployeeDirectory.Controller.pdb

@@ -1,16 +1,20 @@
-﻿using EmployeeDirectory.Data;
+﻿using EmployeeDirectory.Data.Contract;
 using EmployeeDirectory.Models;
+using EmployeeDirectory.Services.Contract;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 namespace EmployeeDirectory.Common.Services
 {
-    //major focus
-    public static class ValidationService
+    public class ValidationService:IValidationService
     {
+        IEmployeeHandler _employeeHandler;
+        public ValidationService(IEmployeeHandler employeeHandler)
+        {
+            this._employeeHandler = employeeHandler;
+        }
        
-        public static ValidationResult ValidateNotEmpty(string inputField)
+        public  ValidationResult ValidateNotEmpty(string inputField)
         {
             if (string.IsNullOrEmpty(inputField))
             {
@@ -18,7 +22,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateEmployeeIdFormate(string empId)
+        public  ValidationResult ValidateEmployeeIdFormate(string empId)
         {
             var employeeIdRegex = @"^TZ\d{4}$";
             if (!Regex.IsMatch(empId, employeeIdRegex))
@@ -27,16 +31,16 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateEmployeeIdUnique(string empId)
+        public  ValidationResult ValidateEmployeeIdUnique(string empId)
         {
-            List<Employee> employeeDataList = JsonFileHandler.GetData<Employee>();
+            List<Employee> employeeDataList = _employeeHandler.GetData();
             if (employeeDataList.Any(emp => emp.EmpId == empId))
             {
                 return ValidationResult.OnFailure("This Employee Id already Exist in the DataBase Try Different one..");
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateName(string name)
+        public  ValidationResult ValidateName(string name)
         {
             var nameRegex = @"^(?!\s+$)[a-zA-Z\s]+$";
             if (!Regex.IsMatch(name, nameRegex))
@@ -45,7 +49,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateEmailFormate(string email)
+        public  ValidationResult ValidateEmailFormate(string email)
         {
             var emailRegex = @"^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$";
             if (!Regex.IsMatch(email, emailRegex))
@@ -54,7 +58,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidatePhoneNoFormate(string phoneNo)
+        public  ValidationResult ValidatePhoneNoFormate(string phoneNo)
         {
             var phoneNoRegex = @"^\d{10}$";
             if (!Regex.IsMatch(phoneNo, phoneNoRegex))
@@ -64,7 +68,7 @@ namespace EmployeeDirectory.Common.Services
             return ValidationResult.OnSuccess();
 
         }
-        public static ValidationResult ValidateDate(string date)
+        public  ValidationResult ValidateDate(string date)
         {
             bool isDateValid = DateOnly.TryParse(date, CultureInfo.CurrentCulture, out DateOnly dateOutput);
             if (isDateValid)
@@ -76,7 +80,7 @@ namespace EmployeeDirectory.Common.Services
                 return ValidationResult.OnFailure("Invalid Date Input ");
             }
         }
-        public static ValidationResult ValidateEmployeeId(string empId)
+        public  ValidationResult ValidateEmployeeId(string empId)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(empId);
             if (!emptyValidationResult.IsValid)
@@ -95,7 +99,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateFirstName(string firstName)
+        public  ValidationResult ValidateFirstName(string firstName)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(firstName);
             if (!emptyValidationResult.IsValid)
@@ -109,7 +113,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateLastName(string lastName)
+        public  ValidationResult ValidateLastName(string lastName)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(lastName);
             if (!emptyValidationResult.IsValid)
@@ -124,7 +128,7 @@ namespace EmployeeDirectory.Common.Services
             return ValidationResult.OnSuccess();
         }
 
-        public static ValidationResult ValidateEmail(string email)
+        public  ValidationResult ValidateEmail(string email)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(email);
             if (!emptyValidationResult.IsValid)
@@ -138,14 +142,14 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidatePhoneNumber(string phoneNo)
+        public  ValidationResult ValidatePhoneNumber(string phoneNo)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(phoneNo);
             if (!emptyValidationResult.IsValid)
             {
                 return emptyValidationResult;
             }
-            ValidationResult validatePhoneNo = ValidateName(phoneNo);
+            ValidationResult validatePhoneNo = ValidatePhoneNoFormate(phoneNo);
             if (!validatePhoneNo.IsValid)
             {
                 return validatePhoneNo;
@@ -153,7 +157,7 @@ namespace EmployeeDirectory.Common.Services
             return ValidationResult.OnSuccess();
         }
         
-        public static ValidationResult ValidateRoleName(string roleName)
+        public  ValidationResult ValidateRoleName(string roleName)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(roleName);
             if (!emptyValidationResult.IsValid)
@@ -167,7 +171,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateLocation(string location)
+        public  ValidationResult ValidateLocation(string location)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(location);
             if (!emptyValidationResult.IsValid)
@@ -181,7 +185,7 @@ namespace EmployeeDirectory.Common.Services
             }
             return ValidationResult.OnSuccess();
         }
-        public static ValidationResult ValidateDepartment(string department)
+        public  ValidationResult ValidateDepartment(string department)
         {
             ValidationResult emptyValidationResult = ValidateNotEmpty(department);
             if (!emptyValidationResult.IsValid)

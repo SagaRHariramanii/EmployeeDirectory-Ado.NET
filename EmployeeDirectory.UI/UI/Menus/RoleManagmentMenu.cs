@@ -1,17 +1,22 @@
 ﻿using EmployeeDirectory.Common;
-using EmployeeDirectory.Common.Services;
+using EmployeeDirectory.Controller.Contract;
 using EmployeeDirectory.Models;
-using EmployeeDirectory.Services;
+using EmployeeDirectory.Models.Models;
+using EmployeeDirectory.UI.Contract;
 
 namespace EmployeeDirectory.UI.Menus
 {
 
-    public class RoleManagmentMenu
+    public class RoleManagmentMenu:IRoleManagmentMenu
     {
-        RoleService roleService = new();
-        public static void RoleManagmentMenuOptions()
+        IRoleController _roleController;
+        public RoleManagmentMenu(IRoleController roleController)
         {
-            RoleManagmentMenu roleManagmentMenu = new();
+            _roleController = roleController;
+        }
+
+        public void RoleManagmentMenuOptions()
+        {
             Console.WriteLine("1. Add new role");
             Console.WriteLine("2. Display all Roles");
             Console.WriteLine("3. Go Back");
@@ -27,14 +32,13 @@ namespace EmployeeDirectory.UI.Menus
                 switch (roleManagmentChoice)
                 {
                     case 1:
-                        roleManagmentMenu.OptionAddRole();
+                        OptionAddRole();
                         break;
                     case 2:
-                        roleManagmentMenu.OptionDisplayAllRoles();
+                        OptionDisplayAllRoles();
                         break;
                     case 3:
-                        MainMenuOptions.DisplayMainMenuOptions();
-                        break;
+                        return;
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
@@ -42,11 +46,11 @@ namespace EmployeeDirectory.UI.Menus
             }
 
         }
-        public static string GetRoleName()
+        public string GetRoleName()
         {
             Console.Write("Enter the Role Name : ");
             string roleName = Console.ReadLine()!;
-            ValidationResult RoleNameValidator = ValidationService.ValidateRoleName(roleName);
+            ValidationResult RoleNameValidator = _roleController.ValidateRoleName(roleName);
             if (!RoleNameValidator.IsValid)
             {
                 Console.WriteLine(RoleNameValidator.Message);
@@ -58,45 +62,55 @@ namespace EmployeeDirectory.UI.Menus
                 return roleName;
             }
         }
-        public static string GetLocation()
+        public  string GetLocation()
         {
-            Console.Write("Enter Location : ");
-            string location = Console.ReadLine()!;
-            ValidationResult LocationValidator = ValidationService.ValidateLocation(location);
-            if (!LocationValidator.IsValid)
+            int i = 1;
+            List<string> locations = _roleController.GetLocationList();
+            Console.WriteLine("--------------------- Locations ---------------------");
+            foreach (string loc in locations)
             {
-                Console.WriteLine(LocationValidator.Message);
-                string loc = GetRoleName();
-                return loc;
+                Console.WriteLine(i + ". " + loc);
+                i++;
+            }
+            Console.Write("\nEnter the location : ");
+            int selectedOption = int.Parse(Console.ReadLine()!);
+            if (selectedOption > (locations.Count))
+            {
+                Console.WriteLine("Invalid Choice..");
+                string empLocation = GetLocation();
+                return empLocation;
             }
             else
             {
+                string location = locations[selectedOption - 1];
                 return location;
             }
         }
-        public static string GetDepartment()
+        public  string GetDepartment()
         {
-            Console.Write("Enter the Department : ");
-            string department = Console.ReadLine()!;
-            ValidationResult departmentValidator = ValidationService.ValidateDepartment(department);
-            if (!departmentValidator.IsValid)
+            int i = 1;
+            List<string> departments = _roleController.GetDepartmentList();
+            Console.WriteLine("--------------------- Departments ---------------------");
+            foreach (string dep in departments)
             {
-                Console.WriteLine(departmentValidator.Message);
-                string dep = GetRoleName();
-                return dep;
+                Console.WriteLine(i + ". " + dep);
+                i++;
+            }
+            Console.Write("\nEnter the Department : ");
+            int selectedOption = int.Parse(Console.ReadLine()!);
+            if (selectedOption > (departments.Count))
+            {
+                Console.WriteLine("Invalid Choice..");
+                string empDepartment = GetDepartment();
+                return empDepartment;
             }
             else
             {
+                string department = departments[selectedOption - 1];
                 return department;
             }
         }
-        public static string GetJobTitle()
-        {
-            Console.Write("Enter the Job Title : ");
-            string jobTitle = Console.ReadLine()!;
-            return jobTitle;
-        }
-        public static string GetRoleDescription()
+        public  string GetRoleDescription()
         {
             Console.Write("Enter the Job Description : ");
             string roleDescription = Console.ReadLine()!;
@@ -107,12 +121,12 @@ namespace EmployeeDirectory.UI.Menus
             Role role = new();
             Console.WriteLine("--------------------- Add Role ---------------------");
             role.Name = GetRoleName();
-            role.Location = GetLocation();
-            role.Description = GetRoleDescription();
+            role.Location=GetLocation();
             role.Department = GetDepartment();
-            string lastRoleId = roleService.GetRoleDataByIndex(roleService.GetRoleCount() - 1).Id;
-            role.Id = "R" + (Convert.ToInt16(lastRoleId[1..]) + 1);
-            roleService.AddRole(role);
+            role.Description = GetRoleDescription();
+            string lastRoleId = _roleController.GetDataById("R"+(_roleController.GetRoleCount())).ID;
+            role.ID = "R" + (Convert.ToInt16(lastRoleId[1..]) + 1);
+            _roleController.Add(role);
             Console.WriteLine("Role Added SuccessFully");
             Console.Write("Do you want to add more Role (y/n): ");
             string addMoreChoice = Console.ReadLine()!.ToLower();
@@ -128,12 +142,12 @@ namespace EmployeeDirectory.UI.Menus
         public void OptionDisplayAllRoles()
         {
             Console.WriteLine("RoleList");
-            int countRoleObj = roleService.GetRoleCount();
+            int countRoleObj = _roleController.GetRoleCount();
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
             string header = string.Format("|{0,30}|{1,20}|{2,20}|{3,30}|", "Role Name", "Location", "Department", "Description");
             Console.WriteLine(header);
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-            List<Role> roleDataList = roleService.GetRoleDataList();
+            List<Role> roleDataList = _roleController.GetRoleList();
             for (int i = 0; i < countRoleObj; i++)
             {
                 Role roleData = roleDataList[i];

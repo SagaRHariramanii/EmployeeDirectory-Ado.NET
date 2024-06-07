@@ -1,23 +1,26 @@
-﻿using EmployeeDirectory.Data;
+﻿using EmployeeDirectory.Data.Contract;
 using EmployeeDirectory.Models;
 using EmployeeDirectory.Services.Contract;
 namespace EmployeeDirectory.Services
 {
     public class RoleService : IRoleService
     {
+        IRoleHandler _roleHandler;
+        public RoleService(IRoleHandler roleHandler)
+        {
+            this._roleHandler = roleHandler;
+        }
         public void AddRole(Role role)
         {
-            List<Role> roleDataList = JsonFileHandler.GetData<Role>();
-            roleDataList.Add(role);
-            JsonFileHandler.AddDataToJson(roleDataList);
+            _roleHandler.AddData(role);
         }
         public Role? GetRoleInformation(string roleId)
         {
-            List<Role> roleDataList = JsonFileHandler.GetData<Role>();
+            List<Role> roleDataList = _roleHandler.GetData();
             Role roleObj = new();
             foreach (Role role in roleDataList)
             {
-                if (role.Id == roleId)
+                if (role.ID == roleId)
                 {
                     roleObj.Name = role.Name;
                     roleObj.Location = role.Location;
@@ -29,26 +32,28 @@ namespace EmployeeDirectory.Services
         }
         public string? GetRoleId(string roleName, string location, string department)
         {
-            List<Role> roleDataList = JsonFileHandler.GetData<Role>();
-            string roleId = (from role in roleDataList where role.Name == roleName && role.Location == location && role.Department == department select role.Id).FirstOrDefault()!;
+            List<Role> roleDataList = _roleHandler.GetData();
+            string roleId = (from role in roleDataList where role.Name == roleName && role.Location == location && role.Department == department select role.ID).FirstOrDefault()!;
             return roleId;
         }
         public int GetRoleCount()
         {
-            List<Role> roleDataList = JsonFileHandler.GetData<Role>();
+            List<Role> roleDataList = _roleHandler.GetData();
             return roleDataList.Count;
         }
-        public Role GetRoleDataByIndex(int index)
+        public Role GetRoleDataById(string roleId)
         {
-            //dont depend on index
-            List<Role> roleDataList = JsonFileHandler.GetData<Role>();
-            return roleDataList[index];
+            List<Role> roleDataList = _roleHandler.GetData();
+            Role roleData= (from role in roleDataList where role.ID == roleId select role).FirstOrDefault()!;
+            return roleData;
 
         }
+        
         public List<Role> GetRoleDataList()
         {
-            return JsonFileHandler.GetData<Role>();
+            return _roleHandler.GetData();
         }
+
 
     }
 }

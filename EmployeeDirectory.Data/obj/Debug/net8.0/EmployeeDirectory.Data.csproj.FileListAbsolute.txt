@@ -16,3 +16,37 @@ C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.Data\obj\Debu
 C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\ref\EmployeeDirectory.Data.dll
 C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\Data\role.json
 C:\Users\sagar.h\source\repos\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\Data\employee.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Data.deps.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Data.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Models.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Models.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.csproj.AssemblyReference.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.AssemblyInfoInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.AssemblyInfo.cs
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.csproj.CoreCompileInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.sourcelink.json
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\Employee.3E42B934.Up2Date
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\refint\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.pdb
+C:\Users\sagar.h\Desktop\Employee Directory\EmployeeDirectory.Data\obj\Debug\net8.0\ref\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\Data\employee.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\Data\role.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Data.deps.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Data.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Models.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\bin\Debug\net8.0\EmployeeDirectory.Models.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.csproj.AssemblyReference.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.AssemblyInfoInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.AssemblyInfo.cs
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.csproj.CoreCompileInputs.cache
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.sourcelink.json
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\Employee.3E42B934.Up2Date
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\refint\EmployeeDirectory.Data.dll
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\EmployeeDirectory.Data.pdb
+C:\Users\sagar.h\Desktop\Employee Directory Ado\EmployeeDirectory.Data\obj\Debug\net8.0\ref\EmployeeDirectory.Data.dll

@@ -1,12 +1,19 @@
-﻿using EmployeeDirectory.UI.Menus;
+﻿using EmployeeDirectory.UI.Contract;
 
 namespace EmployeeDirectory.UI
 {
-    public static class MainMenuOptions
+    public class MainMenuOptions:IMainMenu
     {
-        public static void DisplayMainMenuOptions()
+        IEmployeeManagementMenu _employeeManagementMenu;
+        IRoleManagmentMenu _roleManagmentMenu;
+        public MainMenuOptions(IEmployeeManagementMenu employeeManagementMenu,IRoleManagmentMenu roleManagmentMenu)
         {
-
+            this._employeeManagementMenu = employeeManagementMenu;
+            this._roleManagmentMenu = roleManagmentMenu;
+        }
+        public void DisplayMainMenuOptions()
+        {
+            _displayMainMenuOptions:
             Console.WriteLine("1. Employee Management");
             Console.WriteLine("2. Role Management");
             Console.WriteLine("3. Exit");
@@ -22,11 +29,15 @@ namespace EmployeeDirectory.UI
                 switch (mainMenuOptionChoice)
                 {
                     case 1:
-                        EmployeeManagementMenu.EmployeeManagmentMenuOptions();
-                        break;
+                        _employeeManagementMenu.EmployeeManagmentMenuOptions();
+                        goto _displayMainMenuOptions;
+
+                    
                     case 2:
-                        RoleManagmentMenu.RoleManagmentMenuOptions();
-                        break;
+                        _roleManagmentMenu.RoleManagmentMenuOptions();
+                        goto _displayMainMenuOptions;
+
+                       
                     case 3:
                         Environment.Exit(0);
                         break;

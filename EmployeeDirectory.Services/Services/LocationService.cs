@@ -11,22 +11,16 @@ namespace EmployeeDirectory.Services.Services
         {
             this._locationHandler = locationHandler;
         }
-        public List<string> GetLocationList()
+        public List<string> GetLocation()
         {
-            List<string> department = [];
-            List<Location> managerList = _locationHandler.GetData();
-            for (int i = 0; i < managerList.Count; i++)
+            List<string> location = [];
+            List<Location> locations = _locationHandler.GetData();
+            for (int i = 0; i < locations.Count; i++)
             {
-                department.Add(managerList[i].Name);
+                location.Add(locations[i].Name);
             }
-            return department;
+            return location;
 
-        }
-        public int GetLocationId(string name)
-        {
-            List<Location> locationList = _locationHandler.GetData();
-            Location location = (from manager in locationList where (manager.Name).Equals(name) select manager).FirstOrDefault()!;
-            return location.ID;
         }
     }
 }

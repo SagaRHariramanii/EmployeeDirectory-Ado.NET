@@ -33,7 +33,7 @@ namespace EmployeeDirectory.Common.Services
         }
         public  ValidationResult ValidateEmployeeIdUnique(string empId)
         {
-            List<Employee> employeeDataList = _employeeHandler.GetData();
+            List<Employee> employeeDataList = _employeeHandler.GetEmployees();
             if (employeeDataList.Any(emp => emp.EmpId == empId))
             {
                 return ValidationResult.OnFailure("This Employee Id already Exist in the DataBase Try Different one..");

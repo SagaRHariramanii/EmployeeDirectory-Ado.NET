@@ -6,27 +6,27 @@ namespace EmployeeDirectory.Services.Services
 {
     public class ManagerService : IManagerService
     {
-        readonly IManagerHandler ManagerHandler;
+        readonly IManagerHandler _managerHandler;
         public ManagerService(IManagerHandler managerHandler)
         {
-            this.ManagerHandler = managerHandler;
+            this._managerHandler = managerHandler;
         }
         public List<string> GetManagers()
         {
-            List<string> Manager = [];
-            List<Manager> ManagerList = ManagerHandler.GetData();
-            for (int i = 0; i < ManagerList.Count; i++)
+            List<string> manager = [];
+            List<Manager> managers = _managerHandler.GetData();
+            for (int i = 0; i < manager.Count; i++)
             {
-                Manager.Add(ManagerList[i].Name);
+                manager.Add(managers[i].Name);
             }
-            return Manager;
+            return manager;
 
         }
         public int GetManagerId(string name)
         {
-            List<Manager> ManagerList = ManagerHandler.GetData();
-            Manager managerList = (from manager in ManagerList where (manager.Name).Equals(name) select manager).FirstOrDefault()!;
-            return managerList.ID;
+            List<Manager> managers = _managerHandler.GetData();
+            Manager manager = (from mng in managers where (mng.Name).Equals(name) select mng).FirstOrDefault()!;
+            return manager.ID;
         }
     }
 }

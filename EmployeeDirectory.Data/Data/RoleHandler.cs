@@ -11,7 +11,7 @@ namespace EmployeeDirectory.Data.Data
         {
             this.Connection = connection;
         }
-        public void AddData(Role role)
+        public void AddRole(Role role)
         {
             using(SqlConnection conn = Connection.GetConnection())
             {
@@ -73,6 +73,79 @@ namespace EmployeeDirectory.Data.Data
                     conn.Close();
                 }
             }
+        }
+        public int GetRoleCount()
+        {
+            int count=0;
+            using (SqlConnection conn =Connection.GetConnection())
+            {
+                string query = "Select count(*) as RoleCount from Role";
+                using (SqlCommand cmd = new SqlCommand(query,conn))
+                {
+                    conn.Open ();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int roleCount = (int)reader["RoleCount"];
+                        count = roleCount;
+                    }
+                    conn.Close();
+                    
+                }
+            }
+            return count;
+        }
+        public Role? GetRoleById(string roleId)
+        {
+            Role? roleDetail = null;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                string query = "Select Role.ID,Role.Name As Name,Location.Name As Location,Department.Name As Department,Description from Role Inner Join Department on Role.Department=Department.ID Inner join Location on Role.Location=Location.ID Where Role.ID=@RoleId";
+                using(SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@RoleId", roleId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Role role = new Role
+                        {
+                            ID = reader["ID"].ToString()!,
+                            Name = reader["Name"].ToString()!,
+                            Description = reader["Description"].ToString()!,
+                            Location = (reader["Location"].ToString()!),
+                            Department = (reader["Department"].ToString()!)
+                        };
+                        roleDetail=role;
+                    }
+                    conn.Close();
+                }
+                return roleDetail;
+            }
+        }
+        public string? GetRoleId(string roleName, string location, string department)
+        {
+            string? roleId = null;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                string query = "Select ID from Role Where Name=@RoleName and Location=(Select ID from Location where Name=@LocationName) and Department=(Select ID from Department where Name=@DepartmentName) ";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@RoleName", roleName);
+                    cmd.Parameters.AddWithValue("@LocationName", location);
+                    cmd.Parameters.AddWithValue("@DepartmentName", department);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        roleId = reader["ID"].ToString();
+                    }
+                    conn.Close();
+                }
+                return roleId;
+            }
+
         }
         public void Delete(string roleId)
         {

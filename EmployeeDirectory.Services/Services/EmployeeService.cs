@@ -15,7 +15,7 @@ namespace EmployeeDirectory.Services
         
         public void AddEmployee(Employee emp)
         {
-            _employeeHandler.AddData(emp);
+            _employeeHandler.AddEmployee(emp);
         }
         public void EditEmployee <T>(string empId, Enum fieldName ,T fieldInputData)
         {
@@ -25,17 +25,14 @@ namespace EmployeeDirectory.Services
         {
             _employeeHandler.Delete(employeeId);
         }
-        public Employee? GetEmployeeDataById(string empId)
+        public Employee? GetEmployeeById(string empId)
         {
-            List<Employee> employeeDataList =_employeeHandler.GetData();
-            Employee employeeData = (from emp in employeeDataList where emp.EmpId == empId select emp).FirstOrDefault()!;
-            return employeeData;
+            return _employeeHandler.GetEmployeeById(empId);
         }
-        public List<Employee> GetEmployeeDataList()
+        public List<Employee> GetEmployee()
         {
-            List<Employee> employeeList = _employeeHandler.GetData();
+            List<Employee> employeeList = _employeeHandler.GetEmployees();
             return employeeList;
-
         }
     }
 }

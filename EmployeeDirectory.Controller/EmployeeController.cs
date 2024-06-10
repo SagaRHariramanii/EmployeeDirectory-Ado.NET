@@ -50,7 +50,7 @@ namespace EmployeeDirectory.Controller
         }
         public Employee GetDataById(string empId)
         {
-            Employee employeeData=_employeeService.GetEmployeeDataById(empId)!;
+            Employee employeeData=_employeeService.GetEmployeeById(empId)!;
             return employeeData;
         }
         public void Add(Employee employee)
@@ -59,7 +59,7 @@ namespace EmployeeDirectory.Controller
         }
         public List<Employee> GetEmployeeList()
         {
-            return _employeeService.GetEmployeeDataList();
+            return _employeeService.GetEmployee();
         }
         public void Delete(string employeeId)
         {

@@ -1,7 +1,6 @@
 ﻿using EmployeeDirectory.Common;
 using EmployeeDirectory.Controller.Contract;
 using EmployeeDirectory.Models;
-using EmployeeDirectory.Models.Models;
 using EmployeeDirectory.UI.Contract;
 
 namespace EmployeeDirectory.UI.Menus
@@ -65,7 +64,7 @@ namespace EmployeeDirectory.UI.Menus
         public  string GetLocation()
         {
             int i = 1;
-            List<string> locations = _roleController.GetLocationList();
+            List<string> locations = _roleController.GetLocations();
             Console.WriteLine("--------------------- Locations ---------------------");
             foreach (string loc in locations)
             {
@@ -89,7 +88,7 @@ namespace EmployeeDirectory.UI.Menus
         public  string GetDepartment()
         {
             int i = 1;
-            List<string> departments = _roleController.GetDepartmentList();
+            List<string> departments = _roleController.GetDepartments();
             Console.WriteLine("--------------------- Departments ---------------------");
             foreach (string dep in departments)
             {
@@ -124,7 +123,7 @@ namespace EmployeeDirectory.UI.Menus
             role.Location=GetLocation();
             role.Department = GetDepartment();
             role.Description = GetRoleDescription();
-            string lastRoleId = _roleController.GetDataById("R"+(_roleController.GetRoleCount())).ID;
+            string lastRoleId = _roleController.GetDataById("R"+(_roleController.GetRoleCount()))!.ID;
             role.ID = "R" + (Convert.ToInt16(lastRoleId[1..]) + 1);
             _roleController.Add(role);
             Console.WriteLine("Role Added SuccessFully");
@@ -147,7 +146,7 @@ namespace EmployeeDirectory.UI.Menus
             string header = string.Format("|{0,30}|{1,20}|{2,20}|{3,30}|", "Role Name", "Location", "Department", "Description");
             Console.WriteLine(header);
             Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-            List<Role> roleDataList = _roleController.GetRoleList();
+            List<Role> roleDataList = _roleController.GetRoles();
             for (int i = 0; i < countRoleObj; i++)
             {
                 Role roleData = roleDataList[i];

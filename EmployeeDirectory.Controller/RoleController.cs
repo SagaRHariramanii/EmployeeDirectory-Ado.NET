@@ -41,33 +41,26 @@ namespace EmployeeDirectory.Controller
         {
             return _roleService.GetRoleCount();
         }
-        public Role GetDataById(string roleId)
+        public Role? GetDataById(string roleId)
         {
-            return _roleService.GetRoleDataById(roleId);
+            return _roleService.GetRoleById(roleId);
         }
         public string? GetRoleId(string roleName, string location, string department)
         {
             return _roleService.GetRoleId(roleName, location, department);
         }
-        public List<Role> GetRoleList()
+        public List<Role> GetRoles()
         {
-            return _roleService.GetRoleDataList();
+            return _roleService.GetRoles();
         }
-        public List<string> GetDepartmentList()
+        public List<string> GetDepartments()
         {
-            return _departmentService.GetDepartmentList();
+            return _departmentService.GetDepartment();
         }
-        public List<string> GetLocationList()
+        public List<string> GetLocations()
         {
-            return _locationService.GetLocationList();
+            return _locationService.GetLocation();
         }
-        public int GetdepartmentId(string name)
-        {
-            return _departmentService.GetDepartmentId(name);
-        }
-        public int GetLocationId(string name)
-        {
-            return _locationService.GetLocationId(name);
-        }
+       
     }
 }

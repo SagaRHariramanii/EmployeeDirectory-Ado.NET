@@ -11,22 +11,17 @@ namespace EmployeeDirectory.Services.Services
         {
             this._departmentHandler = departmentHandler;
         }
-        public List<string> GetDepartmentList()
+        public List<string> GetDepartment()
         {
             List<string> department = [];
-            List<Department> managerList = _departmentHandler.GetData();
-            for (int i = 0; i < managerList.Count; i++)
+            List<Department> departments = _departmentHandler.GetData();
+            for (int i = 0; i < departments.Count; i++)
             {
-                department.Add(managerList[i].Name);
+                department.Add(departments[i].Name);
             }
             return department;
 
         }
-        public int GetDepartmentId(string name)
-        {
-            List<Department> departmentList = _departmentHandler.GetData();
-            Department department = (from manager in departmentList where (manager.Name).Equals(name) select manager).FirstOrDefault()!;
-            return department.ID;
-        }
+        
     }
 }

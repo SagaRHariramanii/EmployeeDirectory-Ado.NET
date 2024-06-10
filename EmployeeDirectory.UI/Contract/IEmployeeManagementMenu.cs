@@ -10,7 +10,7 @@ namespace EmployeeDirectory.UI.Contract
         string GetJobTitle(string location, string department);
         string GetLocation();
         void OptionAddEmployee();
-        void OptionDeleteParticularEmployeeData();
+        void OptionDeleteParticularEmployee();
         void OptionDisplayAllEmployeeData();
         void OptionDisplayEmployeeById();
         void OptionEditEmployee(Employee employeeData, string employeeID);

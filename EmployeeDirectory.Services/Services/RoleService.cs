@@ -12,44 +12,21 @@ namespace EmployeeDirectory.Services
         }
         public void AddRole(Role role)
         {
-            _roleHandler.AddData(role);
-        }
-        public Role? GetRoleInformation(string roleId)
-        {
-            List<Role> roleDataList = _roleHandler.GetData();
-            Role roleObj = new();
-            foreach (Role role in roleDataList)
-            {
-                if (role.ID == roleId)
-                {
-                    roleObj.Name = role.Name;
-                    roleObj.Location = role.Location;
-                    roleObj.Department = role.Department;
-                    return roleObj;
-                }
-            }
-            return null;
+            _roleHandler.AddRole(role);
         }
         public string? GetRoleId(string roleName, string location, string department)
         {
-            List<Role> roleDataList = _roleHandler.GetData();
-            string roleId = (from role in roleDataList where role.Name == roleName && role.Location == location && role.Department == department select role.ID).FirstOrDefault()!;
-            return roleId;
+            return _roleHandler.GetRoleId(roleName, location, department);
         }
         public int GetRoleCount()
         {
-            List<Role> roleDataList = _roleHandler.GetData();
-            return roleDataList.Count;
+            return _roleHandler.GetRoleCount();
         }
-        public Role GetRoleDataById(string roleId)
+        public Role? GetRoleById(string roleId)
         {
-            List<Role> roleDataList = _roleHandler.GetData();
-            Role roleData= (from role in roleDataList where role.ID == roleId select role).FirstOrDefault()!;
-            return roleData;
-
+            return _roleHandler.GetRoleById(roleId);
         }
-        
-        public List<Role> GetRoleDataList()
+        public List<Role> GetRoles()
         {
             return _roleHandler.GetData();
         }

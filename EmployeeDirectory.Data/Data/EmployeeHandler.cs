@@ -14,7 +14,7 @@ namespace EmployeeDirectory.Data.Data
         {
             this._connection = connection;
         }
-        public void AddData(Employee employee)
+        public void AddEmployee(Employee employee)
         {
             using(SqlConnection conn=_connection.GetConnection())
             {
@@ -39,7 +39,7 @@ namespace EmployeeDirectory.Data.Data
                 }
             }
         }
-        public List<Employee> GetData()
+        public List<Employee> GetEmployees()
         {
             List<Employee> Employees_List = new List<Employee>();
             using (SqlConnection conn = _connection.GetConnection())
@@ -75,6 +75,43 @@ namespace EmployeeDirectory.Data.Data
 
             }
             return Employees_List;
+
+        }
+        public Employee? GetEmployeeById(string empId)
+        {
+            Employee? employee=null;
+            using (SqlConnection conn = _connection.GetConnection())
+            {
+                conn.Open();
+                string query = "Select Employee.EmpId,Employee.FirstName,Employee.LastName,Employee.Email,Employee.Dob,Employee.PhoneNo,Employee.JoiningDate,Employee.RoleId,Employee.IsDeleted,(ManagerEmployee.FirstName+' '+ManagerEmployee.LastName)As ManagerName,Project.Name As ProjectName\r\nfrom Employee Inner Join Manager on Employee.ManagerId=Manager.Id \r\nINNER JOIN Employee AS ManagerEmployee ON Manager.EmployeeId = ManagerEmployee.Id \r\nInner Join Project On Employee.ProjectId=Project.Id  Where Employee.EmpId=@EmpId";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EmpId", empId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Employee emp = new Employee
+                        {
+                            EmpId = reader["EmpId"].ToString()!,
+                            FirstName = reader["FirstName"].ToString()!,
+                            LastName = reader["LastName"].ToString()!,
+                            Email = reader["Email"].ToString()!,
+                            Dob = ((DateTime)reader["Dob"]),
+                            PhoneNo = reader["PhoneNo"].ToString()!,
+                            JoiningDate = ((DateTime)reader["JoiningDate"]),
+                            ManagerName = reader["ManagerName"].ToString()!,
+                            ProjectName = reader["ProjectName"].ToString()!,
+                            RoleId = reader["RoleId"].ToString()!,
+                            IsDeleted = ((bool)reader["IsDeleted"])
+
+                        };
+                        employee = emp;
+                    }
+                    conn.Close();
+                }
+            }
+            return employee;
 
         }
         public void Update<T>(string empId, Enum fieldName, T fieldInputData)

@@ -7,7 +7,7 @@ namespace EmployeeDirectory.Services.Contract
         void AddEmployee(Employee employee);
         void EditEmployee<T>(string empId, Enum fieldName, T fieldInputData);
         void DeleteEmployee(string employeeId);
-        Employee? GetEmployeeDataById(string employeeId);
-        List<Employee> GetEmployeeDataList();
+        Employee? GetEmployeeById(string employeeId);
+        List<Employee> GetEmployee();
     }
 }

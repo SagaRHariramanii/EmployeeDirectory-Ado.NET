@@ -65,7 +65,7 @@ namespace EmployeeDirectory.UI.Menus
                         }
                         break;
                     case 5:
-                        OptionDeleteParticularEmployeeData();
+                        OptionDeleteParticularEmployee();
                         break;
                     case 6:
                         return;
@@ -191,7 +191,7 @@ namespace EmployeeDirectory.UI.Menus
         public string GetLocation()
         {
             int i = 1;
-            List<string> locations =_roleController.GetLocationList();
+            List<string> locations =_roleController.GetLocations();
            
             Console.WriteLine("--------------------- Locations ---------------------");
             foreach (string loc in locations)
@@ -220,9 +220,9 @@ namespace EmployeeDirectory.UI.Menus
             List<string> departments = [];
             for (int j = 1; j <= _roleController.GetRoleCount(); j++)
             {
-                if (selectedLocation == _roleController.GetDataById("R" + j).Location)
+                if (selectedLocation == _roleController.GetDataById("R" + j)!.Location)
                 {
-                    departments.Add(_roleController.GetDataById("R" + j).Department);
+                    departments.Add(_roleController.GetDataById("R" + j)!.Department);
                 }
             }
             string[] uniqueDepartments = departments.Distinct().ToArray();
@@ -254,11 +254,11 @@ namespace EmployeeDirectory.UI.Menus
             int i = 1;
             for (int j = 1; j <= _roleController.GetRoleCount(); j++)
             {
-                if (selectedLocation == _roleController.GetDataById("R"+j).Location)
+                if (selectedLocation == _roleController.GetDataById("R"+j)!.Location)
                 {
-                    if (selectedDepartment == _roleController.GetDataById("R"+j).Department)
+                    if (selectedDepartment == _roleController.GetDataById("R"+j)!.Department)
                     {
-                        jobTitles.Add(_roleController.GetDataById("R"+j).Name);
+                        jobTitles.Add(_roleController.GetDataById("R"+j)!.Name);
                     }
                 }
             }
@@ -414,7 +414,7 @@ namespace EmployeeDirectory.UI.Menus
             Console.WriteLine("1.  First Name: " + employeeData.FirstName);
             Console.WriteLine("2.  Last Name: " + employeeData.LastName);
             Console.WriteLine("3.  Date of Birth: " + employeeData.Dob);
-            Console.WriteLine("4.  Email: " + employeeData.Email);
+            Console.WriteLine("4.  Email: " + employeeData.Email); 
             Console.WriteLine("5.  Phone number: " + employeeData.PhoneNo);
             Console.WriteLine("6.  Joining Date: " + employeeData.JoiningDate);
             Role roleDetail = _roleController.GetDataById(employeeData.RoleId)!;
@@ -511,7 +511,7 @@ namespace EmployeeDirectory.UI.Menus
                 Environment.Exit(0);
             }
         }
-        public void OptionDeleteParticularEmployeeData()
+        public void OptionDeleteParticularEmployee()
         {
             Console.WriteLine("--------------------- Delete a Particular Employee Data ---------------------");
             Console.Write("Enter the EmployeeId of Employee : ");

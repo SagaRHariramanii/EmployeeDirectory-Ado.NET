@@ -13,7 +13,7 @@ namespace EmployeeDirectory.Data.Data
         }
         public List<Location> GetData()
         {
-            List<Location> locationList = new List<Location>();
+            List<Location> locations = new List<Location>();
             using (SqlConnection conn = Connection.GetConnection())
             {
                 conn.Open();
@@ -29,12 +29,12 @@ namespace EmployeeDirectory.Data.Data
                             ID = ((int)reader["ID"]),
                             Name = reader["Name"].ToString()!
                         };
-                        locationList.Add(location);
+                        locations.Add(location);
                     }
                 }
                 conn.Close();
             }
-            return locationList;
+            return locations;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using EmployeeDirectory.Common;
 using EmployeeDirectory.Controller.Contract;
 using EmployeeDirectory.Models;
+using EmployeeDirectory.Models.Models;
 using EmployeeDirectory.Services.Contract;
 
 namespace EmployeeDirectory.Controller
@@ -15,8 +16,8 @@ namespace EmployeeDirectory.Controller
         {
             this._employeeService = employeeService;
             this._validationService = validationService;
-            _managerService = managerService;
-            _projectService = projectService;
+            this._managerService = managerService;
+            this._projectService = projectService;
         }
         public ValidationResult ValidateEmployeeId(string employeeId)
         {
@@ -69,21 +70,21 @@ namespace EmployeeDirectory.Controller
         {
             _employeeService.EditEmployee(empId, employeeField, employeeFieldInput);
         }
-        public List<string> GetMangersList()
+        public List<Manager> GetMangersList()
         {
             return _managerService.GetManagers();
         }
-        public List <string> GetProjectList()
+        public List <Project> GetProjectList()
         {
             return _projectService.GetProjects();
         }
-        public int GetManagerId(string name)
+        public string? GetManagerName(int id)
         {
-            return _managerService.GetManagerId(name);
+            return _managerService.GetManagerName(id);
         }
-        public int GetProjectId(string name)
+        public string? GetProjectName(int id)
         {
-            return _projectService.GetProjectId(name);
+            return _projectService.GetProjectName(id);
         }
         
 

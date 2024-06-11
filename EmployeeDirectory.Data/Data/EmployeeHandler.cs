@@ -7,9 +7,6 @@ namespace EmployeeDirectory.Data.Data
     public class EmployeeHandler : IEmployeeHandler
     {
         IDbConnection _connection;
-
-        //explore about sql injection attacks
-        //make these handlers robust
         public EmployeeHandler(IDbConnection connection)
         {
             this._connection = connection;
@@ -18,8 +15,8 @@ namespace EmployeeDirectory.Data.Data
         {
             using(SqlConnection conn=_connection.GetConnection())
             {
-                string query = $"Insert Into Employee(EmpId,FirstName,LastName,Email,Dob,PhoneNo,JoiningDate,ManagerId,ProjectId,RoleId,IsDeleted) " +
-                    $"Values(@EmpId,@FirstName,@LastName,@Email,@Dob,@PhoneNo,@JoiningDate,(Select Manager.Id from (Select Manager.Id ,Employee.FirstName+' '+Employee.LastName As Name from Manager Inner Join Employee on Manager.EmployeeId=Employee.Id) As Manager Where Manager.Name=@ManagerName),(Select Id from Project Where Name=@ProjectName),@RoleId,@IsDeleted)";
+                string query = $"Insert Into Employee(EmpId,FirstName,LastName,Email,Dob,PhoneNo,JoiningDate,ManagerId,ProjectId,RoleId,IsDeleted,CreatedOn,CreatedBy) " +
+                    $"Values(@EmpId,@FirstName,@LastName,@Email,@Dob,@PhoneNo,@JoiningDate,@ManagerId,@ProjectId,@RoleId,@IsDeleted,@CreatedOn,@CreatedBy)";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@EmpId" , employee.EmpId);
@@ -29,10 +26,12 @@ namespace EmployeeDirectory.Data.Data
                     cmd.Parameters.AddWithValue("@Dob", employee.Dob);
                     cmd.Parameters.AddWithValue("@PhoneNo",employee.PhoneNo);
                     cmd.Parameters.AddWithValue("@JoiningDate",employee.JoiningDate);
-                    cmd.Parameters.AddWithValue("@ManagerName", employee.ManagerName);
-                    cmd.Parameters.AddWithValue("@ProjectName",employee.ProjectName);
+                    cmd.Parameters.AddWithValue("@ManagerId", employee.ManagerId);
+                    cmd.Parameters.AddWithValue("@ProjectId",employee.ProjectId);
                     cmd.Parameters.AddWithValue("@RoleId",employee.RoleId);
                     cmd.Parameters.AddWithValue("@IsDeleted", employee.IsDeleted);
+                    cmd.Parameters.AddWithValue("@CreatedOn", DateTime.UtcNow);
+                    cmd.Parameters.AddWithValue("@CreatedBy", "System");
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -45,7 +44,7 @@ namespace EmployeeDirectory.Data.Data
             using (SqlConnection conn = _connection.GetConnection())
             {
                 conn.Open();
-                string query = "Select Employee.EmpId,Employee.FirstName,Employee.LastName,Employee.Email,Employee.Dob,Employee.PhoneNo,Employee.JoiningDate,Employee.RoleId,Employee.IsDeleted,(ManagerEmployee.FirstName+' '+ManagerEmployee.LastName)As ManagerName,Project.Name As ProjectName\r\nfrom Employee Inner Join Manager on Employee.ManagerId=Manager.Id \r\nINNER JOIN Employee AS ManagerEmployee ON Manager.EmployeeId = ManagerEmployee.Id \r\nInner Join Project On Employee.ProjectId=Project.Id";
+                string query = "Select Employee.EmpId,Employee.FirstName,Employee.LastName,Employee.Email,Employee.Dob,Employee.PhoneNo,Employee.JoiningDate,Employee.RoleId,Employee.IsDeleted,Employee.ManagerId,Employee.ProjectId from Employee";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -61,9 +60,9 @@ namespace EmployeeDirectory.Data.Data
                             Dob = ((DateTime)reader["Dob"]),
                             PhoneNo=reader["PhoneNo"].ToString()!,
                             JoiningDate = ((DateTime)reader["JoiningDate"]),
-                            ManagerName = reader["ManagerName"].ToString()!,
-                            ProjectName = reader["ProjectName"].ToString()!,
-                            RoleId = reader["RoleId"].ToString()!,
+                            ManagerId = (int)reader["ManagerId"],
+                            ProjectId = (int)reader["ProjectId"],
+                            RoleId = (int)reader["RoleId"],
                             IsDeleted = ((bool)reader["IsDeleted"])
 
                         };
@@ -83,7 +82,7 @@ namespace EmployeeDirectory.Data.Data
             using (SqlConnection conn = _connection.GetConnection())
             {
                 conn.Open();
-                string query = "Select Employee.EmpId,Employee.FirstName,Employee.LastName,Employee.Email,Employee.Dob,Employee.PhoneNo,Employee.JoiningDate,Employee.RoleId,Employee.IsDeleted,(ManagerEmployee.FirstName+' '+ManagerEmployee.LastName)As ManagerName,Project.Name As ProjectName\r\nfrom Employee Inner Join Manager on Employee.ManagerId=Manager.Id \r\nINNER JOIN Employee AS ManagerEmployee ON Manager.EmployeeId = ManagerEmployee.Id \r\nInner Join Project On Employee.ProjectId=Project.Id  Where Employee.EmpId=@EmpId";
+                string query = "Select Employee.EmpId,Employee.FirstName,Employee.LastName,Employee.Email,Employee.Dob,Employee.PhoneNo,Employee.JoiningDate,Employee.RoleId,Employee.IsDeleted,Employee.ManagerId,Employee.ProjectId from Employee Where Employee.EmpId=@EmpId";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@EmpId", empId);
@@ -100,9 +99,9 @@ namespace EmployeeDirectory.Data.Data
                             Dob = ((DateTime)reader["Dob"]),
                             PhoneNo = reader["PhoneNo"].ToString()!,
                             JoiningDate = ((DateTime)reader["JoiningDate"]),
-                            ManagerName = reader["ManagerName"].ToString()!,
-                            ProjectName = reader["ProjectName"].ToString()!,
-                            RoleId = reader["RoleId"].ToString()!,
+                            ManagerId = (int)reader["ManagerId"],
+                            ProjectId = (int)reader["ProjectId"],
+                            RoleId = (int)reader["RoleId"],
                             IsDeleted = ((bool)reader["IsDeleted"])
 
                         };
@@ -118,9 +117,11 @@ namespace EmployeeDirectory.Data.Data
         {
             using (SqlConnection conn = _connection.GetConnection())
             {
-                string query = $"Update Employee SET {fieldName}=@FieldInputData Where EmpId=@EmpId";
+                string query = $"Update Employee SET {fieldName}=@FieldInputData ,UpdatedOn=@UpdatedOn,UpdatedBy=@UpdatedBy  Where EmpId=@EmpId";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@UpdatedOn", DateTime.UtcNow);
+                    cmd.Parameters.AddWithValue("@UpdatedBy", "System");
                     cmd.Parameters.AddWithValue("@FieldInputData", fieldInputData);
                     cmd.Parameters.AddWithValue("@EmpId", empId);
                     conn.Open();

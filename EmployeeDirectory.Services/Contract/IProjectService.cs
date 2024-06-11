@@ -1,8 +1,10 @@
-﻿namespace EmployeeDirectory.Services.Contract
+﻿using EmployeeDirectory.Models.Models;
+
+namespace EmployeeDirectory.Services.Contract
 {
     public interface IProjectService
     {
-        int GetProjectId(string name);
-        List<string> GetProjects();
+        string? GetProjectName(int id);
+        List<Project> GetProjects();
     }
 }

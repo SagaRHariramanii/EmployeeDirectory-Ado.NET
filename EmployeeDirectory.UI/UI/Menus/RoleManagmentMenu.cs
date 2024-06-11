@@ -123,8 +123,6 @@ namespace EmployeeDirectory.UI.Menus
             role.Location=GetLocation();
             role.Department = GetDepartment();
             role.Description = GetRoleDescription();
-            string lastRoleId = _roleController.GetDataById("R"+(_roleController.GetRoleCount()))!.ID;
-            role.ID = "R" + (Convert.ToInt16(lastRoleId[1..]) + 1);
             _roleController.Add(role);
             Console.WriteLine("Role Added SuccessFully");
             Console.Write("Do you want to add more Role (y/n): ");

@@ -11,22 +11,15 @@ namespace EmployeeDirectory.Services.Services
         {
             this._managerHandler = managerHandler;
         }
-        public List<string> GetManagers()
+        public List<Manager> GetManagers()
         {
-            List<string> manager = [];
-            List<Manager> managers = _managerHandler.GetData();
-            for (int i = 0; i < manager.Count; i++)
-            {
-                manager.Add(managers[i].Name);
-            }
-            return manager;
+            List<Manager> managers = _managerHandler.GetManagers();
+            return managers;
 
         }
-        public int GetManagerId(string name)
+        public string? GetManagerName(int id)
         {
-            List<Manager> managers = _managerHandler.GetData();
-            Manager manager = (from mng in managers where (mng.Name).Equals(name) select mng).FirstOrDefault()!;
-            return manager.ID;
+            return _managerHandler.GetMangerNameById(id);
         }
     }
 }

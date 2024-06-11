@@ -17,9 +17,9 @@ namespace EmployeeDirectory.Controller.Contract
         List<Employee> GetEmployeeList();
         void Delete(string employeeId);
         void Edit<T>(string empId, Enum employeeField, T employeeFieldInput);
-        List<string> GetMangersList();
-        List<string> GetProjectList();
-        int GetManagerId(string name);
-        int GetProjectId(string name);
+        List<Manager> GetMangersList();
+        List<Project> GetProjectList();
+        string? GetManagerName(int id);
+        string? GetProjectName(int id);
     }
 }

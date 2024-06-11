@@ -220,9 +220,9 @@ namespace EmployeeDirectory.UI.Menus
             List<string> departments = [];
             for (int j = 1; j <= _roleController.GetRoleCount(); j++)
             {
-                if (selectedLocation == _roleController.GetDataById("R" + j)!.Location)
+                if (selectedLocation == _roleController.GetDataById(j)!.Location)
                 {
-                    departments.Add(_roleController.GetDataById("R" + j)!.Department);
+                    departments.Add(_roleController.GetDataById(j)!.Department);
                 }
             }
             string[] uniqueDepartments = departments.Distinct().ToArray();
@@ -254,11 +254,11 @@ namespace EmployeeDirectory.UI.Menus
             int i = 1;
             for (int j = 1; j <= _roleController.GetRoleCount(); j++)
             {
-                if (selectedLocation == _roleController.GetDataById("R"+j)!.Location)
+                if (selectedLocation == _roleController.GetDataById(j)!.Location)
                 {
-                    if (selectedDepartment == _roleController.GetDataById("R"+j)!.Department)
+                    if (selectedDepartment == _roleController.GetDataById(j)!.Department)
                     {
-                        jobTitles.Add(_roleController.GetDataById("R"+j)!.Name);
+                        jobTitles.Add(_roleController.GetDataById(j)!.Name);
                     }
                 }
             }
@@ -284,13 +284,13 @@ namespace EmployeeDirectory.UI.Menus
                 return jobTitle;
             }
         }
-        public string GetManager()
+        public int GetManager()
         {
             int i = 1;
-            List<string> managerList = _employeeController.GetMangersList();
-            foreach (string manager in managerList)
+            List<Manager> managerList = _employeeController.GetMangersList();
+            foreach (Manager manager in managerList)
             {
-                Console.WriteLine(i + ". " + manager);
+                Console.WriteLine(i + ". " + manager.Name);
                 i++;
             }
             Console.Write("Enter the ManagerName : ");
@@ -298,22 +298,22 @@ namespace EmployeeDirectory.UI.Menus
             if (managerChoice > (managerList.Count))
             {
                 Console.WriteLine("Invalid Choice..");
-                string manager = GetManager();
+                int manager = GetManager();
                 return manager;
             }
             else
             {
-                string manager = managerList[managerChoice - 1];
+                int manager = managerList[managerChoice - 1].ID;
                 return manager;
             }
         }
-        public  string GetProject()
+        public  int GetProject()
         {
             int i = 1;
-            List<string> projectList = _employeeController.GetProjectList();
-            foreach (string project in projectList)
+            List<Project> projectList = _employeeController.GetProjectList();
+            foreach (Project project in projectList)
             {
-                Console.WriteLine(i + ". " + project);
+                Console.WriteLine(i + ". " + project.Name);
                 i++;
             }
             Console.Write("Enter the ProjectName : ");
@@ -321,12 +321,12 @@ namespace EmployeeDirectory.UI.Menus
             if (projectChoice > (projectList.Count))
             {
                 Console.WriteLine("Invalid Choice..");
-                string project = GetManager();
+                int project = GetProject();
                 return project;
             }
             else
             {
-                string project = projectList[projectChoice - 1];
+                int project = projectList[projectChoice - 1].ID;
                 return project;
             }
         }
@@ -346,8 +346,8 @@ namespace EmployeeDirectory.UI.Menus
                 string header = string.Format("|{0,10}|{1,25}|{2,30}|{3,20}|{4,15}|{5,20}|{6,20}|{7,20}|", "EmpID", "Name", "Role", "Department", "Location", "Join Date", "Manager Name", "Project Name");
                 Console.WriteLine(header);
                 Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                Role roleDetail = _roleController.GetDataById(employeeData.RoleId)!;
-                Console.WriteLine("|{0,10}|{1,25}|{2,30}|{3,20}|{4,15}|{5,20}|{6,20}|{7,20}|", employeeData.EmpId, employeeData.FirstName + " " + employeeData.LastName, roleDetail.Name, roleDetail.Department, roleDetail.Location, employeeData.JoiningDate, employeeData.ManagerName, employeeData.ProjectName);
+                Role roleDetail = _roleController.GetDataById((int)employeeData.RoleId!)!;
+                Console.WriteLine("|{0,10}|{1,25}|{2,30}|{3,20}|{4,15}|{5,20}|{6,20}|{7,20}|", employeeData.EmpId, employeeData.FirstName + " " + employeeData.LastName, roleDetail.Name, roleDetail.Department, roleDetail.Location, employeeData.JoiningDate, employeeData.ManagerId, employeeData.ProjectId);
                 Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
 
             }
@@ -367,8 +367,8 @@ namespace EmployeeDirectory.UI.Menus
             string location = GetLocation();
             string department = GetDepartment(location);
             string jobTitle = GetJobTitle(location, department);
-            emp.ManagerName = GetManager();
-            emp.ProjectName = GetProject();
+            emp.ManagerId = GetManager();
+            emp.ProjectId = GetProject();
             emp.RoleId = _roleController.GetRoleId(jobTitle,location, department)!;
             emp.IsDeleted = false;
             _employeeController.Add(emp);
@@ -401,8 +401,8 @@ namespace EmployeeDirectory.UI.Menus
                 }
                 else
                 {
-                    Role roleDetail = _roleController.GetDataById(empData.RoleId)!;
-                    string employeeData = string.Format("|{0,10}|{1,25}|{2,30}|{3,20}|{4,15}|{5,20}|{6,20}|{7,20}|", empData.EmpId, empData.FirstName + " " + empData.LastName, roleDetail.Name, roleDetail.Department, roleDetail.Location, empData.JoiningDate, empData.ManagerName, empData.ProjectName);
+                    Role roleDetail = _roleController.GetDataById((int)empData.RoleId!)!;
+                    string employeeData = string.Format("|{0,10}|{1,25}|{2,30}|{3,20}|{4,15}|{5,20}|{6,20}|{7,20}|", empData.EmpId, empData.FirstName + " " + empData.LastName, roleDetail.Name, roleDetail.Department, roleDetail.Location, empData.JoiningDate, _employeeController.GetManagerName(empData.ManagerId), _employeeController.GetProjectName(empData.ProjectId));
                     Console.WriteLine(employeeData);
                     Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 }
@@ -417,7 +417,7 @@ namespace EmployeeDirectory.UI.Menus
             Console.WriteLine("4.  Email: " + employeeData.Email); 
             Console.WriteLine("5.  Phone number: " + employeeData.PhoneNo);
             Console.WriteLine("6.  Joining Date: " + employeeData.JoiningDate);
-            Role roleDetail = _roleController.GetDataById(employeeData.RoleId)!;
+            Role roleDetail = _roleController.GetDataById((int)employeeData.RoleId!)!;
             if (roleDetail != null)
             {
                 Console.WriteLine("7.  Location: " + roleDetail.Location);
@@ -430,8 +430,8 @@ namespace EmployeeDirectory.UI.Menus
                 Console.WriteLine("8.  Job Title: " + "");
                 Console.WriteLine("9.  Department: " + "");
             }
-            Console.WriteLine("10. Manager Name: " + employeeData.ManagerName);
-            Console.WriteLine("11. Project Name: " + employeeData.ProjectName);
+            Console.WriteLine("10. Manager Name: " + _employeeController.GetManagerName(employeeData.ManagerId));
+            Console.WriteLine("11. Project Name: " + _employeeController.GetProjectName(employeeData.ProjectId));
         }
         public void OptionEditEmployee(Employee employeeData, string employeeID)
         {
@@ -473,7 +473,7 @@ namespace EmployeeDirectory.UI.Menus
                     string changedLocation = GetLocation();
                     string changedDepartment = GetDepartment(changedLocation);
                     string changedJobTitle = GetJobTitle(changedLocation, changedDepartment);
-                    string roleId = _roleController.GetRoleId(changedJobTitle,changedLocation, changedDepartment)!;
+                    int? roleId = _roleController.GetRoleId(changedJobTitle,changedLocation, changedDepartment)!;
                     _employeeController.Edit(employeeID,EmployeeField.RoleId ,roleId);
                     Console.WriteLine("Location,Department,Job Title Changed SuccessFully");
                     break;
@@ -482,15 +482,15 @@ namespace EmployeeDirectory.UI.Menus
                 case 9:
                     goto case 7;
                 case 10:
-                    string manager = GetManager();
-                    int managerId=_employeeController.GetManagerId(manager);
-                    _employeeController.Edit(employeeID,EmployeeField.ManagerId, managerId);
+                    int manager = GetManager();
+                    //int managerId=_employeeController.GetManagerId(manager);
+                    _employeeController.Edit(employeeID,EmployeeField.ManagerId, manager);
                     Console.WriteLine("ManagerName Changed Successfully");
                     break;
                 case 11:
-                    string project = GetProject();
-                    int projectId=_employeeController.GetProjectId(project);
-                    _employeeController.Edit(employeeID,EmployeeField.ProjectId, projectId);
+                    int project = GetProject();
+                    //int projectId=_employeeController.GetProjectId(project);
+                    _employeeController.Edit(employeeID,EmployeeField.ProjectId, project);
                     Console.WriteLine("ProjectName Changed Successfully");
                     break;
                 default:

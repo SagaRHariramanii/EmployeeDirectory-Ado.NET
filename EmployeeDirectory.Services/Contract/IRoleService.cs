@@ -5,9 +5,9 @@ namespace EmployeeDirectory.Services.Contract
     public interface IRoleService
     {
         void AddRole(Role role);
-        string? GetRoleId(string roleName, string location, string department);
+        int? GetRoleId(string roleName, string location, string department);
         int GetRoleCount();
-        Role? GetRoleById(string roleId);
+        Role? GetRoleById(int roleId);
         List<Role> GetRoles();
 
     }

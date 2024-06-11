@@ -15,10 +15,9 @@ namespace EmployeeDirectory.Data.Data
         {
             using(SqlConnection conn = Connection.GetConnection())
             {
-                string query = $"Insert Into Role (Id,Name,Description,Location,Department) values(@Id,@Name,@Description,(select ID from Location where Name=@Location),(select ID from Department where Name=@Department)) ";
+                string query = $"Insert Into Role (Name,Description,Location,Department) values(@Name,@Description,(select ID from Location where Name=@Location),(select ID from Department where Name=@Department)) ";
                 using(SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Id", role.ID);
                     cmd.Parameters.AddWithValue("@Name", role.Name);
                     cmd.Parameters.AddWithValue("@Description", role.Description);
                     cmd.Parameters.AddWithValue("@Location", role.Location);
@@ -45,7 +44,7 @@ namespace EmployeeDirectory.Data.Data
                     {
                         Role role = new Role
                         {
-                            ID = reader["ID"].ToString()!,
+                            ID = (int)reader["ID"],
                             Name = reader["Name"].ToString()!,
                             Description = reader["Description"].ToString()!,
                             Location = (reader["Location"].ToString()!),
@@ -95,7 +94,7 @@ namespace EmployeeDirectory.Data.Data
             }
             return count;
         }
-        public Role? GetRoleById(string roleId)
+        public Role? GetRoleById(int roleId)
         {
             Role? roleDetail = null;
             using (SqlConnection conn = Connection.GetConnection())
@@ -111,7 +110,7 @@ namespace EmployeeDirectory.Data.Data
                     {
                         Role role = new Role
                         {
-                            ID = reader["ID"].ToString()!,
+                            ID = (int)reader["ID"],
                             Name = reader["Name"].ToString()!,
                             Description = reader["Description"].ToString()!,
                             Location = (reader["Location"].ToString()!),
@@ -124,9 +123,9 @@ namespace EmployeeDirectory.Data.Data
                 return roleDetail;
             }
         }
-        public string? GetRoleId(string roleName, string location, string department)
+        public int? GetRoleId(string roleName, string location, string department)
         {
-            string? roleId = null;
+            int? roleId = null;
             using (SqlConnection conn = Connection.GetConnection())
             {
                 string query = "Select ID from Role Where Name=@RoleName and Location=(Select ID from Location where Name=@LocationName) and Department=(Select ID from Department where Name=@DepartmentName) ";
@@ -139,7 +138,7 @@ namespace EmployeeDirectory.Data.Data
                     SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
-                        roleId = reader["ID"].ToString();
+                        roleId = (int)reader["ID"];
                     }
                     conn.Close();
                 }
@@ -147,7 +146,7 @@ namespace EmployeeDirectory.Data.Data
             }
 
         }
-        public void Delete(string roleId)
+        public void Delete(int roleId)
         {
             using (SqlConnection conn = Connection.GetConnection())
             {

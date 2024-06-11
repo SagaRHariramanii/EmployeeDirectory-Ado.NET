@@ -4,6 +4,7 @@ namespace EmployeeDirectory.Data.Contract
 {
     public interface IManagerHandler
     {
-        List<Manager> GetData();
+        List<Manager> GetManagers();
+        string? GetMangerNameById(int id);
     }
 }

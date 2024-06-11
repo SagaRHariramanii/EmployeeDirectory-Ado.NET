@@ -14,7 +14,7 @@ namespace EmployeeDirectory.Services
         {
             _roleHandler.AddRole(role);
         }
-        public string? GetRoleId(string roleName, string location, string department)
+        public int? GetRoleId(string roleName, string location, string department)
         {
             return _roleHandler.GetRoleId(roleName, location, department);
         }
@@ -22,7 +22,7 @@ namespace EmployeeDirectory.Services
         {
             return _roleHandler.GetRoleCount();
         }
-        public Role? GetRoleById(string roleId)
+        public Role? GetRoleById(int roleId)
         {
             return _roleHandler.GetRoleById(roleId);
         }

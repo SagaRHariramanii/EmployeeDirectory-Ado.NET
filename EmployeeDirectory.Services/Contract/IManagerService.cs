@@ -1,8 +1,10 @@
-﻿namespace EmployeeDirectory.Services.Contract
+﻿using EmployeeDirectory.Models.Models;
+
+namespace EmployeeDirectory.Services.Contract
 {
     public interface IManagerService
     {
-        int GetManagerId(string name);
-        List<string> GetManagers();
+        string? GetManagerName(int id);
+        List<Manager> GetManagers();
     }
 }

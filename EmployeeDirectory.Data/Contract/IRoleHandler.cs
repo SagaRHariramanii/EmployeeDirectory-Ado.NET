@@ -6,10 +6,10 @@ namespace EmployeeDirectory.Data.Contract
     {
         void AddRole(Role role);
         List<Role> GetData();
-        Role? GetRoleById(string roleId);
+        Role? GetRoleById(int roleId);
         int GetRoleCount();
-        string? GetRoleId(string roleName, string location, string department);
+        int? GetRoleId(string roleName, string location, string department);
         void Update(string roleId, string fieldName, string fieldInputData);
-        void Delete(string roleId);
+        void Delete(int roleId);
     }
 }

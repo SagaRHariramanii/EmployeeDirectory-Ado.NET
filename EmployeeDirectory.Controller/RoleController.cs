@@ -41,11 +41,11 @@ namespace EmployeeDirectory.Controller
         {
             return _roleService.GetRoleCount();
         }
-        public Role? GetDataById(string roleId)
+        public Role? GetDataById(int roleId)
         {
             return _roleService.GetRoleById(roleId);
         }
-        public string? GetRoleId(string roleName, string location, string department)
+        public int? GetRoleId(string roleName, string location, string department)
         {
             return _roleService.GetRoleId(roleName, location, department);
         }

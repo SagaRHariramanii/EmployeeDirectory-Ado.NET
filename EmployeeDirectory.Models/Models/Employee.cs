@@ -10,10 +10,14 @@
         public DateTime Dob { get; set; }
         public string PhoneNo { get; set; }
         public DateTime JoiningDate { get; set; }
-        public string ManagerName { get; set; }
-        public string ProjectName { get; set; }
+        public int ManagerId { get; set; }
+        public int ProjectId { get; set; }
         public bool IsDeleted { get; set; }
-        public string RoleId { get; set; }
+        public int? RoleId { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime UpdatedOn { get; set;}
+        public string CreatedBy {  get; set; }
+        public string UpdatedBy { get; set;}
 
     }
 }

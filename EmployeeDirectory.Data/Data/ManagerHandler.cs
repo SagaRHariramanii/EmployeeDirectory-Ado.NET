@@ -13,7 +13,7 @@ namespace EmployeeDirectory.Data.Data
             this.Connection = connection;
         }
 
-        public List<Manager> GetData()
+        public List<Manager> GetManagers()
         {
             List<Manager> managerList = new List<Manager>();
             using (SqlConnection conn = Connection.GetConnection())
@@ -37,6 +37,27 @@ namespace EmployeeDirectory.Data.Data
                 conn.Close();
             }
             return managerList;
+        }
+
+        public string? GetMangerNameById(int id)
+        {
+            string? managerName=null;
+            using(SqlConnection conn = Connection.GetConnection())
+            {
+                string query = "select FirstName+' '+LastName as Name from Manager Inner Join Employee on Manager.EmployeeId=Employee.Id where Manager.ID=@Id";
+                conn.Open();
+                using(SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    SqlDataReader reader =cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        managerName = reader["Name"].ToString()!;
+                    }
+                }
+                conn.Close() ;
+                return managerName;
+            }
         }
     }
 }

@@ -11,10 +11,13 @@ namespace EmployeeDirectory.Controller.Contract
         ValidationResult ValidateDepartment(string department);
         ValidationResult ValidateLocation(string location);
         ValidationResult ValidateRoleName(string roleName);
-        int? GetRoleId(string roleName, string location, string department);
+        int GetRoleId(string roleName, int location, int department);
         List<Role> GetRoles();
-        List<string> GetDepartments();
-        List<string> GetLocations();
+        List<Department> GetDepartments();
+        List<Location> GetLocations();
+        string? GetLocationNameById(int Id);
+        string? GetDepartmentNameById(int Id);
+        Department? GetDepartmentById(int Id);
 
     }
 }

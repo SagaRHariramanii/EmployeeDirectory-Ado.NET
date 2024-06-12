@@ -1,7 +1,6 @@
 ﻿using EmployeeDirectory.Common;
 using EmployeeDirectory.Controller.Contract;
 using EmployeeDirectory.Models;
-using EmployeeDirectory.Models.Models;
 using EmployeeDirectory.Services.Contract;
 
 namespace EmployeeDirectory.Controller
@@ -58,7 +57,7 @@ namespace EmployeeDirectory.Controller
         {
             _employeeService.AddEmployee(employee);
         }
-        public List<Employee> GetEmployeeList()
+        public List<Employee> GetEmployees()
         {
             return _employeeService.GetEmployee();
         }
@@ -70,11 +69,11 @@ namespace EmployeeDirectory.Controller
         {
             _employeeService.EditEmployee(empId, employeeField, employeeFieldInput);
         }
-        public List<Manager> GetMangersList()
+        public List<Manager> GetMangers()
         {
             return _managerService.GetManagers();
         }
-        public List <Project> GetProjectList()
+        public List <Project> GetProjects()
         {
             return _projectService.GetProjects();
         }
@@ -82,7 +81,7 @@ namespace EmployeeDirectory.Controller
         {
             return _managerService.GetManagerName(id);
         }
-        public string? GetProjectName(int id)
+        public string? GetProjectName(int? id)
         {
             return _projectService.GetProjectName(id);
         }

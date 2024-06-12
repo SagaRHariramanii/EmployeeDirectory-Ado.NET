@@ -1,4 +1,4 @@
-﻿using EmployeeDirectory.Models.Models;
+﻿using EmployeeDirectory.Models;
 
 namespace EmployeeDirectory.Data.Contract
 {
@@ -6,5 +6,6 @@ namespace EmployeeDirectory.Data.Contract
     {
         List<Department> GetData();
         string? GetDepartmentNameById(int id);
+        Department? GetDepartmentById(int id);
     }
 }

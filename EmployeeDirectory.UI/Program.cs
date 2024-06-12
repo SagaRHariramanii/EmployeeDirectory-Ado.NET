@@ -1,21 +1,19 @@
 ﻿using EmployeeDirectory.UI;
 using Microsoft.Extensions.Configuration;
-using EmployeeDirectory.Data.Data;
 using Microsoft.Extensions.DependencyInjection;
 using EmployeeDirectory.Services.Contract;
 using EmployeeDirectory.Services;
 using EmployeeDirectory.Data.Contract;
 using EmployeeDirectory.Data;
-using EmployeeDirectory.Services.Services;
 using EmployeeDirectory.Controller.Contract;
 using EmployeeDirectory.Controller;
 using EmployeeDirectory.UI.Contract;
 using EmployeeDirectory.UI.Menus;
-using EmployeeDirectory.Common.Services;
+using EmployeeDirectory.Services.Common;
 
 namespace MainMenu
 {
-    
+
     public class EmployeeDirectory
     {
         public static void Main(string[] args)

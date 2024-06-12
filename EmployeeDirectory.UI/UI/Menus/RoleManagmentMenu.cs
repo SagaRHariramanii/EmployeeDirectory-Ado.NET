@@ -16,14 +16,12 @@ namespace EmployeeDirectory.UI.Menus
 
         public void RoleManagmentMenuOptions()
         {
-            Console.WriteLine("1. Add new role");
-            Console.WriteLine("2. Display all Roles");
-            Console.WriteLine("3. Go Back");
-            Console.Write("Choice = ");
+            Console.WriteLine(Constant.roleManagmentMenu);
+            Console.Write(Constant.choice);
             int roleManagmentChoice = Parser.ParseToInt(Console.ReadLine()!);
             if (roleManagmentChoice==-1)
             {
-                Console.WriteLine("Invalid Choice Select Again");
+                Console.WriteLine(Constant.invalidChoice+" "+Constant.selectAgain);
                 RoleManagmentMenuOptions();
             }
             else
@@ -39,7 +37,7 @@ namespace EmployeeDirectory.UI.Menus
                     case 3:
                         return;
                     default:
-                        Console.WriteLine("Invalid Choice");
+                        Console.WriteLine(Constant.invalidChoice);
                         break;
                 }
             }
@@ -47,7 +45,7 @@ namespace EmployeeDirectory.UI.Menus
         }
         public string GetRoleName()
         {
-            Console.Write("Enter the Role Name : ");
+            Console.Write(Constant.enterRoleName);
             string roleName = Console.ReadLine()!;
             ValidationResult RoleNameValidator = _roleController.ValidateRoleName(roleName);
             if (!RoleNameValidator.IsValid)
@@ -61,71 +59,71 @@ namespace EmployeeDirectory.UI.Menus
                 return roleName;
             }
         }
-        public  string GetLocation()
+        public  int GetLocationId()
         {
             int i = 1;
-            List<string> locations = _roleController.GetLocations();
-            Console.WriteLine("--------------------- Locations ---------------------");
-            foreach (string loc in locations)
+            List<Location> locations = _roleController.GetLocations();
+            Console.WriteLine(Constant.locationDecorator);
+            foreach (Location loc in locations)
             {
-                Console.WriteLine(i + ". " + loc);
+                Console.WriteLine(i + ". " + loc.Name);
                 i++;
             }
-            Console.Write("\nEnter the location : ");
+            Console.Write("\n"+Constant.enterLocation);
             int selectedOption = int.Parse(Console.ReadLine()!);
             if (selectedOption > (locations.Count))
             {
-                Console.WriteLine("Invalid Choice..");
-                string empLocation = GetLocation();
-                return empLocation;
+                Console.WriteLine(Constant.invalidChoice);
+                int empLocationId = GetLocationId();
+                return empLocationId;
             }
             else
             {
-                string location = locations[selectedOption - 1];
-                return location;
+                int locationId = locations[selectedOption - 1].ID;
+                return locationId;
             }
         }
-        public  string GetDepartment()
+        public int GetDepartmentId()
         {
             int i = 1;
-            List<string> departments = _roleController.GetDepartments();
-            Console.WriteLine("--------------------- Departments ---------------------");
-            foreach (string dep in departments)
+            List<Department> departments = _roleController.GetDepartments();
+            Console.WriteLine(Constant.departmentDecorator);
+            foreach (Department dep in departments)
             {
-                Console.WriteLine(i + ". " + dep);
+                Console.WriteLine(i + ". " + dep.Name);
                 i++;
             }
-            Console.Write("\nEnter the Department : ");
-            int selectedOption = int.Parse(Console.ReadLine()!);
-            if (selectedOption > (departments.Count))
+            Console.Write("\n"+Constant.enterDepartment);
+            int selectedOption = Parser.ParseToInt(Console.ReadLine()!);
+            if (selectedOption > (departments.Count)||selectedOption<=0)
             {
-                Console.WriteLine("Invalid Choice..");
-                string empDepartment = GetDepartment();
-                return empDepartment;
+                Console.WriteLine(Constant.invalidChoice);
+                int empDepartmentId = GetDepartmentId();
+                return empDepartmentId;
             }
             else
             {
-                string department = departments[selectedOption - 1];
-                return department;
+                int departmentId = departments[selectedOption - 1].ID;
+                return departmentId;
             }
         }
         public  string GetRoleDescription()
         {
-            Console.Write("Enter the Job Description : ");
+            Console.Write(Constant.enterJobTitle);
             string roleDescription = Console.ReadLine()!;
             return roleDescription;
         }
         public void OptionAddRole()
         {
             Role role = new();
-            Console.WriteLine("--------------------- Add Role ---------------------");
+            Console.WriteLine(Constant.addRole);
             role.Name = GetRoleName();
-            role.Location=GetLocation();
-            role.Department = GetDepartment();
+            role.LocationId=GetLocationId();
+            role.DepartmentId = GetDepartmentId();
             role.Description = GetRoleDescription();
             _roleController.Add(role);
-            Console.WriteLine("Role Added SuccessFully");
-            Console.Write("Do you want to add more Role (y/n): ");
+            Console.WriteLine(Constant.roleAddedSuccessfully);
+            Console.Write(Constant.addMoreRoleChoice);
             string addMoreChoice = Console.ReadLine()!.ToLower();
             if (addMoreChoice == "y")
             {
@@ -138,19 +136,18 @@ namespace EmployeeDirectory.UI.Menus
         }
         public void OptionDisplayAllRoles()
         {
-            Console.WriteLine("RoleList");
             int countRoleObj = _roleController.GetRoleCount();
-            Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+            Console.WriteLine(Constant.roleTableDecorator);
             string header = string.Format("|{0,30}|{1,20}|{2,20}|{3,30}|", "Role Name", "Location", "Department", "Description");
             Console.WriteLine(header);
-            Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+            Console.WriteLine(Constant.roleTableDecorator);
             List<Role> roleDataList = _roleController.GetRoles();
-            for (int i = 0; i < countRoleObj; i++)
+            for (int i = 0; i < roleDataList.Count; i++)
             {
                 Role roleData = roleDataList[i];
-                string formatedRoleData = string.Format("|{0,30}|{1,20}|{2,20}|{3,30}|", roleData.Name, roleData.Location, roleData.Department, roleData.Description);
+                string formatedRoleData = string.Format("|{0,30}|{1,20}|{2,20}|{3,30}|", roleData.Name, _roleController.GetLocationNameById(roleData.LocationId), _roleController.GetDepartmentNameById(roleData.DepartmentId), roleData.Description);
                 Console.WriteLine(formatedRoleData);
-                Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                Console.WriteLine(Constant.roleTableDecorator);
             }
         }
     }

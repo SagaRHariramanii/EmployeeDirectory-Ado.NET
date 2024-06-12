@@ -1,4 +1,5 @@
 ﻿using EmployeeDirectory.UI.Contract;
+using EmployeeDirectory.UI.Menus;
 
 namespace EmployeeDirectory.UI
 {
@@ -14,14 +15,12 @@ namespace EmployeeDirectory.UI
         public void DisplayMainMenuOptions()
         {
             _displayMainMenuOptions:
-            Console.WriteLine("1. Employee Management");
-            Console.WriteLine("2. Role Management");
-            Console.WriteLine("3. Exit");
-            Console.Write("Choice = ");
+            Console.WriteLine(Constant.mainMenuOptions);
+            Console.Write(Constant.choice);
             int mainMenuOptionChoice= Parser.ParseToInt(Console.ReadLine()!);
             if (mainMenuOptionChoice==-1)
             {
-                Console.WriteLine("Invalid Choice Select Again");
+                Console.WriteLine(Constant.invalidChoice+" "+Constant.selectAgain);
                 DisplayMainMenuOptions();
             }
             else
@@ -42,7 +41,7 @@ namespace EmployeeDirectory.UI
                         Environment.Exit(0);
                         break;
                     default:
-                        Console.WriteLine("Invalid Choice");
+                        Console.WriteLine(Constant.invalidChoice);
                         break;
 
                 }

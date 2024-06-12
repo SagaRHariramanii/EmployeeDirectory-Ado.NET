@@ -6,9 +6,9 @@ namespace EmployeeDirectory.UI.Contract
     {
         void DisplayEmployeeData(Employee employeeData);
         void EmployeeManagmentMenuOptions();
-        string GetDepartment(string location);
-        string GetJobTitle(string location, string department);
-        string GetLocation();
+        int GetDepartmentId(int location);
+        string GetJobTitle(int location, int department);
+        int GetLocationId();
         void OptionAddEmployee();
         void OptionDeleteParticularEmployee();
         void OptionDisplayAllEmployeeData();

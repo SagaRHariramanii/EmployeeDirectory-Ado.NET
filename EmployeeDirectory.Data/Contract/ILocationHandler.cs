@@ -1,4 +1,4 @@
-﻿using EmployeeDirectory.Models.Models;
+﻿using EmployeeDirectory.Models;
 
 namespace EmployeeDirectory.Data.Contract
 {

@@ -1,6 +1,5 @@
 ﻿using EmployeeDirectory.Common;
 using EmployeeDirectory.Models;
-using EmployeeDirectory.Models.Models;
 
 namespace EmployeeDirectory.Controller.Contract
 {
@@ -14,12 +13,12 @@ namespace EmployeeDirectory.Controller.Contract
         ValidationResult ValidatePhoneNumber(string phone);
         Employee GetDataById(string empId);
         void Add(Employee employee);
-        List<Employee> GetEmployeeList();
+        List<Employee> GetEmployees();
         void Delete(string employeeId);
         void Edit<T>(string empId, Enum employeeField, T employeeFieldInput);
-        List<Manager> GetMangersList();
-        List<Project> GetProjectList();
+        List<Manager> GetMangers();
+        List<Project> GetProjects();
         string? GetManagerName(int id);
-        string? GetProjectName(int id);
+        string? GetProjectName(int? id);
     }
 }

@@ -1,10 +1,10 @@
-﻿using EmployeeDirectory.Models.Models;
+﻿using EmployeeDirectory.Models;
 
 namespace EmployeeDirectory.Data.Contract
 {
     public interface IProjectHandler
     {
         List<Project> GetData();
-        string? GetProjectNameById(int id);
+        string? GetProjectNameById(int? id);
     }
 }

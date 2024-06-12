@@ -36,5 +36,25 @@ namespace EmployeeDirectory.Data.Data
             }
             return locations;
         }
+        public string? GetLocationNameById(int id)
+        {
+            string? locationName = null;
+            using (SqlConnection conn = Connection.GetConnection())
+            {
+                string query = "Select Name from Location where Manager.ID=@Id";
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        locationName = reader["Name"].ToString()!;
+                    }
+                }
+                conn.Close();
+                return locationName;
+            }
+        }
     }
 }

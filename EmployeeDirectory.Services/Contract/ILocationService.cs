@@ -2,6 +2,7 @@
 {
     public interface ILocationService
     {
-        List<string> GetLocation();
+        List<string> GetLocations();
+        string? GetLocationName(int id);
     }
 }

@@ -2,6 +2,7 @@
 {
     public interface IDepartmentService
     {
-        List<string> GetDepartment();
+        List<string> GetDepartments();
+        string? GetDepartmentName(int id);
     }
 }

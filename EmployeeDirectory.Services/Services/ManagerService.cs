@@ -13,9 +13,7 @@ namespace EmployeeDirectory.Services.Services
         }
         public List<Manager> GetManagers()
         {
-            List<Manager> managers = _managerHandler.GetManagers();
-            return managers;
-
+            return _managerHandler.GetManagers();
         }
         public string? GetManagerName(int id)
         {

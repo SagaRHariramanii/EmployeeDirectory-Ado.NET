@@ -28,7 +28,7 @@ namespace EmployeeDirectory.Services
         }
         public List<Role> GetRoles()
         {
-            return _roleHandler.GetData();
+            return _roleHandler.GetRoles();
         }
 
 

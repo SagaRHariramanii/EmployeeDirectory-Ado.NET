@@ -28,9 +28,9 @@ namespace EmployeeDirectory.Data.Data
                 }
             }
         }
-        public List<Role> GetData()
+        public List<Role> GetRoles()
         {
-            List<Role> Role_List = new List<Role>();
+            List<Role> roles = new List<Role>();
             using (SqlConnection conn = Connection.GetConnection())
             {
                 string query = "Select Role.ID,Role.Name As Name,Location.Name As Location,Department.Name As Department,Description from Role Inner Join Department on Role.Department=Department.ID Inner join Location on Role.Location=Location.ID";
@@ -50,12 +50,12 @@ namespace EmployeeDirectory.Data.Data
                             Location = (reader["Location"].ToString()!),
                             Department = (reader["Department"].ToString()!)
                         };
-                        Role_List.Add(role);
+                        roles.Add(role);
                     }
                     conn.Close();
                 }
             }
-            return Role_List;
+            return roles;
         }
         public void Update(string roleId, string fieldName, string fieldInputData)
         {

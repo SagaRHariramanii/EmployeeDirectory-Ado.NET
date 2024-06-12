@@ -11,7 +11,7 @@ namespace EmployeeDirectory.Services.Services
         {
             this._departmentHandler = departmentHandler;
         }
-        public List<string> GetDepartment()
+        public List<string> GetDepartments()
         {
             List<string> department = [];
             List<Department> departments = _departmentHandler.GetData();
@@ -22,6 +22,9 @@ namespace EmployeeDirectory.Services.Services
             return department;
 
         }
-        
+        public string? GetDepartmentName(int id)
+        {
+            return _departmentHandler.GetDepartmentNameById(id);
+        }
     }
 }

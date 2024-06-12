@@ -15,7 +15,7 @@ namespace EmployeeDirectory.Data.Data
 
         public List<Project> GetData()
         {
-            List<Project> ProjectList = new List<Project>();
+            List<Project> Projects = new List<Project>();
             using (SqlConnection conn = Connection.GetConnection())
             {
                 conn.Open();
@@ -31,12 +31,12 @@ namespace EmployeeDirectory.Data.Data
                             ID = ((int)reader["Id"]),
                             Name = reader["Name"].ToString()!
                         };
-                        ProjectList.Add(project);
+                        Projects.Add(project);
                     }
                 }
                 conn.Close();
             }
-            return ProjectList;
+            return Projects;
         }
         public string? GetProjectNameById(int id)
         {

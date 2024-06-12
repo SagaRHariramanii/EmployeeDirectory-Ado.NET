@@ -11,7 +11,7 @@ namespace EmployeeDirectory.Services.Services
         {
             this._locationHandler = locationHandler;
         }
-        public List<string> GetLocation()
+        public List<string> GetLocations()
         {
             List<string> location = [];
             List<Location> locations = _locationHandler.GetData();
@@ -21,6 +21,10 @@ namespace EmployeeDirectory.Services.Services
             }
             return location;
 
+        }
+        public string? GetLocationName(int id)
+        {
+            return _locationHandler.GetLocationNameById(id);
         }
     }
 }

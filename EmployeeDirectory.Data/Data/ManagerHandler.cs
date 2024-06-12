@@ -15,7 +15,7 @@ namespace EmployeeDirectory.Data.Data
 
         public List<Manager> GetManagers()
         {
-            List<Manager> managerList = new List<Manager>();
+            List<Manager> managers = new List<Manager>();
             using (SqlConnection conn = Connection.GetConnection())
             {
                 conn.Open();
@@ -31,12 +31,12 @@ namespace EmployeeDirectory.Data.Data
                             ID = ((int)reader["Id"]),
                             Name = reader["Name"].ToString()!
                         };
-                        managerList.Add(manager);
+                        managers.Add(manager);
                     }
                 }
                 conn.Close();
             }
-            return managerList;
+            return managers;
         }
 
         public string? GetMangerNameById(int id)

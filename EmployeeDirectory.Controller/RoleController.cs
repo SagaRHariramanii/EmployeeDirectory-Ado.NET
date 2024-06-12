@@ -55,11 +55,19 @@ namespace EmployeeDirectory.Controller
         }
         public List<string> GetDepartments()
         {
-            return _departmentService.GetDepartment();
+            return _departmentService.GetDepartments();
         }
         public List<string> GetLocations()
         {
-            return _locationService.GetLocation();
+            return _locationService.GetLocations();
+        }
+        public string? GetLocationName(int Id)
+        {
+            return _locationService.GetLocationName(Id);
+        }
+        public string? GetDepartmentName(int Id)
+        {
+            return _departmentService.GetDepartmentName(Id);
         }
        
     }

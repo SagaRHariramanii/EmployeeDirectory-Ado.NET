@@ -31,8 +31,7 @@ namespace EmployeeDirectory.Services
         }
         public List<Employee> GetEmployee()
         {
-            List<Employee> employeeList = _employeeHandler.GetEmployees();
-            return employeeList;
+            return _employeeHandler.GetEmployees();
         }
     }
 }

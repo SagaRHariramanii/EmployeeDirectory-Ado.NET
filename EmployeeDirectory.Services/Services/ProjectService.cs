@@ -13,10 +13,8 @@ namespace EmployeeDirectory.Services.Services
         }
         public List<Project> GetProjects()
         {
-            List<Project> projectList = _projectHandler.GetData();
-            return projectList;
+            return _projectHandler.GetData();
         }
-
         public string? GetProjectName(int id)
         {
             return _projectHandler.GetProjectNameById(id);
